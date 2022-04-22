@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        li a {
+            text-decoration: none;
+        }
+
+        p {
+            display: none;
+        }
+
+        /* 外层盒子 */
+        #outer {
+            width: 500px;
+            margin: 10px auto;
+        }
+
+        /* 列表 */
+        #month {
+            width: 400px;
+            margin: 0 auto;
+            background: #d6cdcd;
+            padding: 0 0 10px 10px;
+            overflow: hidden;
+            zoom: 1;
+            text-align: center;
+        }
+
+        /* li */
+        #month li {
+            width: 68px;
+            height: 68px;
+            border: 1px solid black;
+            margin: 10px 10px 0 0;
+            float: left;
+            padding: 10px;
+            font-size: 25px;
+            font-weight: 800;
+            color: white;
+            background: rgb(211, 152, 152);
+            cursor: pointer;
+        }
+
+        #month li span {
+            display: block;
+        }
+
+        #month li.liCurrent {
+            color: red;
+            background: white;
+        }
+
+        /* 下层盒子 */
+        #bottom {
+            width: 390px;
+            margin: 0 auto;
+            border: 10px solid #d6cdcd;
+            border-top: 0;
+            font-size: 25px;
+        }
+
+        #bottom p span {
+            font-weight: 800;
+        }
+
+        .pCurrent {
+            display: block;
+            border: 1px solid white;
+            background: rgb(211, 152, 152);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <ul id="month">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li class="liCurrent">6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+        </ul>
+        <div id="bottom">
+            <p>1月</p>
+            <p>2月</p>
+            <p>3月</p>
+            <p>4月</p>
+            <p>5月</p>
+            <p class="pCurrent">6月</p>
+            <p>7月 </p>
+            <p>8月 </p>
+            <p>9月 </p>
+            <p>10月</p>
+            <p>11月</p>
+            <p>12月</p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            /*获取列表和信息段*/
+            var Li = document.getElementById("month").getElementsByTagName("li");
+            var P = document.getElementsByTagName("p");
+            /* 鼠标事件 */
+            for (var i = 0; i < Li.length; i++) {
+                Li[i].index = i;
+                Li[i].onmouseover = function () {
+
+                    // 月份
+                    for (var x in Li) Li[x].className = ""
+                    this.className = "liCurrent"
+
+                    // 下面变化
+                    for (var y in P) P[y].className = ""
+                    P[this.index].className = "pCurrent"
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

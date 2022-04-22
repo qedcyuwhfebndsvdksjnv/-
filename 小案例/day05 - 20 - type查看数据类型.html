@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            margin: 10px;
+            border: 1px dashed black;
+            background: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <pre id="outer">
+    &lt;script&nbsp;type=&quot;text/javascript&quot;&gt;
+	   alert(typeof 7852);		//输出number
+	   alert(typeof &quot;alor&quot;);		//输出string
+	   alert(typeof document);		//输出object
+    &lt;/script&gt;
+</pre>
+    <script>
+        window.onload = function () {
+            alert("typeof 7852 → " + '\u2192' + typeof 7852 + "\n\ntypeof \"alor\" → " + typeof "alor" +
+                "\n\ntypeof document → " + typeof document
+            );
+        }
+    </script>
+</body>
+
+</html>

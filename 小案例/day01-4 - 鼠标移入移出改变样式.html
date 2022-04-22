@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            margin: 50px auto;
+
+        }
+        p{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="A">
+        <p id="p">鼠标移入，移除</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var out = document.getElementById('A')
+            var p =document.getElementById('p')
+            out.onmouseover = function(){
+                this.style.cssText = "background-color:red"
+                p.style.color = "pink"
+            }
+            out.onmouseout = function(){
+                this.style.cssText = ""
+                p.style.color = ""
+            }
+        }
+    </script>
+</body>
+</html>

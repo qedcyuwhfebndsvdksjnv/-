@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>mydemo</title>
+    <style type="text/css">
+        html,
+        body,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            /* border: 1px solid #474958; */
+            width: 200px;
+            margin: 20px auto;
+            color: #474958;
+            cursor: pointer;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        #header {
+            background: #a3b0eb;
+            margin: 1px;
+            padding: 10px;
+        }
+
+
+
+        #list li {
+            background: #e0e2eb;
+            margin-bottom: 1px;
+            line-height: 50px;
+        }
+
+        #list li.lis {
+            margin-bottom: 0;
+        }
+
+        #list li:hover {
+            background: white;
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var Header = document.getElementById("header");
+            var List = document.getElementById("list");
+            var style = List.style;
+            Header.onclick = function () {
+                if (List.style.display != "none") {
+                    List.style.cssText = "display:none";
+                }
+                else {
+                    List.style.cssText = "";
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="header">
+            <p>播放列表...</p>
+   
+        </div>
+        <ul id="list">
+            <li>111</li>
+            <li>222222222</li>
+            <li>33333333333</li>
+            <li>44444444</li>
+            <li>555555</li>
+            <li class="lis">666666666666</li>
+        </ul>
+    </div>
+</body>
+
+</html>

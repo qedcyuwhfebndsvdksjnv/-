@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        html,
+        body {
+            height: 100%;
+            background: black;
+        }
+
+        #outer,
+        img {
+            width: 50px;
+            border-radius: 3px;
+            font-size: 0;
+        }
+
+        #outer {
+            border-radius: 7px;
+            width: 208px;
+            margin: 10px auto;
+            padding: 8px 8px 10px 10px;
+            background: white;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        #outer img {
+            float: left;
+            margin: 2px 2px 0 0;
+        }
+
+        #outer img.clear {
+            clear: both;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="outer">
+        <div id="big">
+            <img src="./image/big_1.jpg" alt="">
+        </div>
+        <img src="./image/small_1.jpg" alt="">
+        <img src="./image/small_2.jpg" alt="">
+        <img src="./image/small_3.jpg" alt="">
+        <img class="clear" src="./image/small_4.jpg" alt="">
+        <img src="./image/small_5.jpg" alt="">
+        <img src="./image/small_6.jpg" alt="">
+        <img src="./image/small_7.jpg" alt="">
+        <img src="./image/small_8.jpg" alt="">
+        <img src="./image/small_9.jpg" alt="">
+        <img src="./image/small_10.jpg" alt="">
+        <img src="./image/small_11.jpg" alt="">
+
+    </div>
+
+    <script>
+        window.onload = function () {
+            var oSmalImg = document.getElementById("outer").getElementsByTagName("img");
+
+
+            for (var i = 1; i < oSmalImg.length; i++) {
+                oSmalImg[i].index = i;
+                oSmalImg[i].onmouseover = function () {
+                    oSmalImg[0].src = "./image/big_" + this.index + ".jpg";
+                };
+            }
+        };
+    </script>
+</body>
+
+</html>
