@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        p {
+            display: inline-block;
+            margin-right: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <button id="btn">点击变红</button>
+        <div class="redbox">
+            <p name="box"></p>
+            <p name="box"></p>
+            <p name="box"></p>
+        </div>
+    </div>
+
+    <script>
+        // var btn = document.getElementsByName("btn")
+        var box = document.getElementsByTagName("p")
+
+        // var box = document.getElementsByTagName("p")
+console.log(box);
+var btn=document.getElementById('btn')
+        btn.onclick = function () {
+
+            for(var i=0; i<box.length; i++){
+                box[i].style.background = 'red' 
+            }
+            console.log('4566');
+        }
+
+
+    </script>
+</body>
+
+</html>

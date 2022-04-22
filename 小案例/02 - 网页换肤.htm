@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style lang="">
+        #box {
+            width: 1080px;
+            height: 10000px;
+        }
+
+        span {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .lv {
+            background-color: #008000;
+        }
+
+        .hei {
+            background-color: #000;
+        }
+
+        b {
+            border: 2px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <span class="red" name="red"></span>
+        <span class="lv" name="lv"></span>
+        <span class="hei" name="hei"></span>
+
+        <div class="bom" name="bom">
+            <b>新闻</b>
+            <b>娱乐</b><b>体育</b><b>电影</b><b>音乐</b><b>旅游</b>
+        </div>
+    </div>
+
+    <script>
+        var red = document.querySelector('.red')
+        var lv = document.querySelector('.lv')
+        var hei = document.querySelector('.hei')
+        var box = document.getElementById('box')
+        var com = document.querySelector('.bom')
+        // console.log(com);
+        // console.log(red);
+        red.onclick = function () {
+            box.style.backgroundColor = "red"
+
+        }
+        lv.onclick = function () {
+            box.style.backgroundColor = "#008000"
+            com.style.backgroundColor = "#718000"
+
+        }
+        hei.onclick = function () {
+            box.style.backgroundColor = "#000"
+            com.style.color="#008000"
+            com.style.backgroundColor = "#000"
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 530px;
+            margin: 50px auto;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <!-- <header> -->
+            <input type="text" id="input" value="1,2">
+            <span>输入数字求和，数字之间用半角“，”号分隔开</span>
+        <!-- </header> -->
+
+        <!-- <footer> -->
+            <button id="btn">求和</button>
+            <span id="sun"></span>
+        <!-- </footer> -->
+    </div>
+</body>
+
+
+<script>
+    window.onload = function () {
+        var input = document.getElementById("input")
+        var btn = document.getElementById("btn")
+        // console.log(btn);
+        // var btn = document.querySelector("button")
+        var sun = document.getElementById("sun")
+
+        //  onkeyup  鼠标弹起事件
+        input.onkeyup = function () {
+            // replace  字符串替换
+            //                   ^ 行的开头
+            //                   \d 数字：[0-9]
+            this.value = this.value.replace(/[^(\d)|(,)]/, "")
+        }
+
+
+        btn.onclick = function () {
+            var sum = 0
+            
+            var input = document.getElementsByTagName("input")[0].value.split(",")
+
+            for (var i in input) {
+                sum += parseInt(input[i])   // parseInt 将字符串转换成整数
+            }
+            
+            sun.innerHTML = sum
+           
+            console.log('btn')
+
+        }
+
+    }
+
+
+</script>
+
+
+</html>
+<script>
+        (function () {
+            console.log(2345);
+
+        })()
+</script>
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button></button>
+    <div></div>
+
+</body>
+
+</html>
+<script>
+    let btn = document.querySelector("button")
+    let div = document.querySelector("div")
+    console.log(12345);
+    btn.onclick = () => {
+        div.innerHTML = "234543647586978p9"
+        alert("2345")
+    }
+</script> -->

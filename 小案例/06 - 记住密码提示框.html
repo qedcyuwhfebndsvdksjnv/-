@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        p {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" name="" id="">
+        <span id="span">两周内自动登陆</span>
+        <p id="p">测试789423</p>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var span = document.getElementById("span")
+            var p = document.getElementById("p")
+            console.log(span);
+
+            span.onmousemove = function () {
+                p.style.display = 'block'
+                console.log('456');
+            }
+            span.onmouseout = function () {
+                p.style.display = 'none'
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
